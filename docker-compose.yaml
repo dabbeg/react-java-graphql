@@ -2,8 +2,17 @@ version: '3'
 services:
   java-back:
     build: ./java_back/
+    container_name: java-back
     ports:
       - "8080:8080"
     volumes:
       - ./java_back:/code
-
+  java-db:
+      image: postgres:9.4
+      container_name: java-db
+      environment:
+        - POSTGRES_DB=java_back
+        - POSTGRES_USER=postgres
+        - POSTGRES_PASSWORD=postgres
+      volumes:
+        - ./java_back/schema.sql:/docker-entrypoint-initdb.d/schema.sql

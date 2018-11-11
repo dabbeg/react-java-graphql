@@ -1,12 +1,22 @@
 package com.dabbeg.app.entities;
 
+import javax.persistence.Entity;
+import javax.persistence.GeneratedValue;
+import javax.persistence.GenerationType;
+import javax.persistence.Id;
+import javax.persistence.Table;
 import lombok.Data;
-import com.dabbeg.app.enums.Environment;
 
 @Data
+@Entity
+@Table(name="todo")
 public class Todo {
+
+  @Id
+  @GeneratedValue(strategy=GenerationType.AUTO)
   private long id;
+
   private String name;
+
   private boolean checked;
-  private Environment type;
 }
