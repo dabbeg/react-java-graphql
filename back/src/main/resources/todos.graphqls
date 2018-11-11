@@ -1,0 +1,15 @@
+type Query {
+  todos: [Todo]
+}
+
+type Todo {
+  id: Int
+  name: String
+  checked: Boolean
+  type: Environment
+}
+
+enum Environment {
+  HOME
+  WORK
+}
