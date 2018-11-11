@@ -1,0 +1,9 @@
+version: '3'
+services:
+  java-back:
+    build: ./java_back/
+    ports:
+      - "8080:8080"
+    volumes:
+      - ./java_back:/code
+

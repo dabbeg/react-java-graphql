@@ -15,7 +15,7 @@ public class Query implements GraphQLQueryResolver {
 
         Todo aTodo = new Todo();
         aTodo.setId(1l);
-        aTodo.setName("Bill");
+        aTodo.setName("Bob");
         aTodo.setChecked(false);
         aTodo.setType(Environment.HOME);
 
